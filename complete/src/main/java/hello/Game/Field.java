@@ -9,7 +9,7 @@ import javax.xml.bind.annotation.XmlType;
 // Optional
 @XmlType(propOrder = { "x", "y", "value"})
 public class Field {
-    private int x,y,value;
+    private int x,y,value, board;
 
     public void setX(int x) {
         this.x = x;

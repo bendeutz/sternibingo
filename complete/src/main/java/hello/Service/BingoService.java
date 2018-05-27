@@ -11,17 +11,15 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import java.io.File;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class BingoService {
 
     private static final String XML_PATH = "./boards.xml";
 
-    public Board createBoard(String input) throws WrongNumberArgsException, JAXBException {
-        int[] inputAsIntArray = getIntArray(input);
+    public Board createBoard(List<String> input) throws WrongNumberArgsException, JAXBException {
 
         List<Field> fieldList = new LinkedList<>();
         for (int i = 0; i < 5; i++) {
@@ -29,13 +27,12 @@ public class BingoService {
                 Field field = new Field();
                 field.setX(i);
                 field.setY(j);
-                field.setValue(inputAsIntArray[5 * i + j]);
+                field.setValue(Integer.parseInt(input.get(5 * i + j)));
                 fieldList.add(field);
             }
         }
         Board board = new Board();
         board.setFieldList(fieldList);
-        board.setId(UUID.randomUUID());
         checkIfBoardIsCorrect();
         saveBoardToXML(board);
         return board;
@@ -82,6 +79,7 @@ public class BingoService {
             xmlWrapper.setBoardList(new LinkedList<>());
         }
 
+        board.setId(xmlWrapper.getBoardList().size());
         xmlWrapper.getBoardList().add(board);
 
         // Write to File
@@ -114,5 +112,23 @@ public class BingoService {
     }
 
 
+    public Map<Integer, Field> getFieldsWithNumber(String number) throws JAXBException {
+        int numberAsInt = Integer.parseInt(number);
+        Map<Integer, Field> result = new LinkedHashMap<>();
+        List<Board> boardList = getBoardsFromXml();
+        for (Board board : boardList) {
+            for (Field field : board.getFieldList()) {
+                if (field.getValue() == numberAsInt) {
+                    result.put(board.getId(), field);
+                }
+            }
+        }
+        return result;
+    }
+
+    //TODO: Method to save the red fields in xml
+    public void saveFields(Map<Integer, Field> fields) {
+
+    }
 }
 

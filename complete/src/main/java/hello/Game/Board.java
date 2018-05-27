@@ -11,13 +11,13 @@ public class Board {
 
 
     private List<Field> fieldList;
-    private UUID id;
+    private int id;
 
     public void setFieldList(List<Field> fieldList) {
         this.fieldList = fieldList;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -26,7 +26,7 @@ public class Board {
         return fieldList;
     }
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 

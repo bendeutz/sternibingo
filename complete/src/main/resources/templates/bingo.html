@@ -10,11 +10,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Custom styles for this template -->
     <link type="text/css" href="basic-style.css" rel="stylesheet">
-
 </head>
 <body>
 
-<div id="board-create" class="modal fade">
+<script th:inline="javascript">
+    /*<![CDATA[*/
+
+    $(document).ready(function () {
+        var fieldsWithNumber = /*[[${fieldsWithNumber}]]*/
+        if(fieldsWithNumber != null) {
+            jQuery.each(fieldsWithNumber, function (board_id, field) {
+                var fieldName = board_id +  "field" + field.x + field.y + "-out";
+                $('#' + fieldName).addClass('red');
+            })
+        }
+    });
+</script>
+
+<div id="board-create" class="modal">
     <div class="modal-dialog">
         <form class="form-horizontal" method="post" th:action="@{createbingoboard}">
             <div class="modal-content">
@@ -23,11 +36,66 @@
                     <h4 class="modal-title">Bingofeld erstellen</h4>
                 </div>
                 <div class="modal-body">
-                    <input class="form-control" type="text" name="bingoNumbers" required>
+                    <div>
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                    </div>
+
+                    <div>
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                    </div>
+                    <div>
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                    </div>
+                    <div>
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                    </div>
+                    <div>
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                        <input autofocus autocomplete="off" class="form-control" style="display: inline; width: 50px; height:50px" type="text" name="field" maxlength="2" required title="field">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
                     <button type="submit" class="btn btn-primary" data-loading-text="Saving..." >Erstellen</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="check-number" class="modal">
+    <div class="modal-dialog">
+        <form class="form-horizontal" method="post" th:action="@{checknumber}">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Nummer eingeben</h4>
+                </div>
+                <div class="modal-body">
+                    <input autofocus autocomplete="off" class="form-control" type="text" name="number" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
+                    <button type="submit" class="btn btn-primary" data-loading-text="Saving...">Prüfen</button>
                 </div>
             </div>
         </form>
@@ -39,9 +107,16 @@
 
 <div class="container">
     <div class="start text-center">
-        <button class="btn btn-primary"
-                data-target="#board-create"
-                data-toggle="modal"><span class="glyphicon glyphicon-plus"></span></button>
+
+        <div class="btn btn-group-vertical sticky-top">
+            <button class="btn btn-success text-center"
+                    data-target="#board-create"
+                    data-toggle="modal">Bingofeld erstellen</button>
+
+            <button class="btn btn-primary text-center"
+                    data-target="#check-number"
+                    data-toggle="modal">Nummer eingeben</button>
+        </div>
 
         <th:block th:each="board : ${boards}">
             <div class="table-wrapper">
@@ -49,10 +124,10 @@
                     <tr th:each="row : ${board.rows}">
                         <td th:each="field : ${row}">
                             <div class="content"
-                                 th:id="field + ${field.x} + ${field.y} + -out">
+                                 th:id="${boardStat.index} + field + ${field.x} + ${field.y} + -out">
                                 <div class="v-align"
                                      th:text="${field.value}"
-                                     th:id="field + ${field.x} + ${field.y} + -in">
+                                     th:id="${boardStat.index} + field + ${field.x} + ${field.y} + -in">
                                 </div>
                             </div>
                         </td>
@@ -60,8 +135,6 @@
                 </table>
             </div>
         </th:block>
-
-
     </div>
 </div>
 
