@@ -14,21 +14,43 @@
 <body>
 
 <script th:inline="javascript">
-    /*<![CDATA[*/
+    function animation() {
+        var number = $('#input-number').val();
+        $.ajax({
+            type: "GET",
+            dataType: "text",
+            url: "/getfieldswithnewnumber?number=" + number,
+            success: function(data) {
+                var json = jQuery.parseJSON(data);
+                $.each(json, function (index, field) {
+                    var fieldName = index + "field" + field.x + field.y + "-out";
+                    $('transform').toggleClass('blue');
+                });
+            },
+            async: false
+        });
+    }
+</script>
 
+<script>
     $(document).ready(function () {
-        var fieldsWithNumber = /*[[${fieldsWithNumber}]]*/
-        if(fieldsWithNumber != null) {
-            jQuery.each(fieldsWithNumber, function (board_id, field) {
-                var fieldName = board_id +  "field" + field.x + field.y + "-out";
-                $('#' + fieldName).addClass('red');
-            })
-        }
+        $('form').submit( function(event) {
+            var formId = this.id,
+                form = this;
+
+            event.preventDefault();
+
+            $('#check-number').modal('hide');
+            $('.quader').toggleClass('quader-clicked');
+            setTimeout( function () {
+                form.submit();
+            }, 4000);
+        });
     });
 </script>
 
 <div id="board-create" class="modal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-sm">
         <form class="form-horizontal" method="post" th:action="@{createbingoboard}">
             <div class="modal-content">
                 <div class="modal-header">
@@ -83,15 +105,15 @@
 </div>
 
 <div id="check-number" class="modal">
-    <div class="modal-dialog">
-        <form class="form-horizontal" method="post" th:action="@{checknumber}">
+    <div class="modal-dialog modal-sm">
+        <form class="form-horizontal" onsubmit="animation()" method="post" th:action="@{checknumber}" id="checknumber-form">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title">Nummer eingeben</h4>
                 </div>
                 <div class="modal-body">
-                    <input autofocus autocomplete="off" class="form-control" type="text" name="number" required>
+                    <input autocomplete="off" class="form-control" type="text" id="input-number" name="number" required autofocus>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Abbrechen</button>
@@ -102,8 +124,13 @@
     </div>
 </div>
 
+<form th:action="@{deletenumberlist}" method="post" id="deletenumberlistform">
+</form>
+
 
 <div th:replace="fragments :: header('bingo')"></div>
+
+
 
 <div class="container">
     <div class="start text-center">
@@ -116,14 +143,18 @@
             <button class="btn btn-primary text-center"
                     data-target="#check-number"
                     data-toggle="modal">Nummer eingeben</button>
+            <button class="btn btn-danger text-center"
+                    type="submit" form="deletenumberlistform">Nummerliste löschen</button>
         </div>
+
+        <div class="quader"></div>
 
         <th:block th:each="board : ${boards}">
             <div class="table-wrapper">
                 <table class="margin-top" th:classappend="${boardStat.index % 2 == 0} ? 'left' : 'right'">
                     <tr th:each="row : ${board.rows}">
                         <td th:each="field : ${row}">
-                            <div class="content"
+                            <div class="content"  th:classappend="${field.isHit()} ? 'red' : 'transform'"
                                  th:id="${boardStat.index} + field + ${field.x} + ${field.y} + -out">
                                 <div class="v-align"
                                      th:text="${field.value}"

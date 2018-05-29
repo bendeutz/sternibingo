@@ -56,7 +56,7 @@ td .content {
 }
 
 td .red {
-  background: red;
+  background:red;
   color: white
 }
 
@@ -66,4 +66,27 @@ td .red {
   transform: translateY(-50%);
   /* vendor prefixes omitted due to brevity */
 }
+
+.quader {
+  -webkit-transition:4s;
+  -webkit-animation-fill-mode: forwards;
+  content: "\200B";
+  height: 0px;
+  width: 0px;
+  position:absolute;
+  top: 0px;
+  right: 0;
+}
+
+.quader-clicked {
+  height: 100px;
+  width: 100px;
+  background-color: rebeccapurple;
+  position:absolute;
+  top: 20%;
+  right: 50%;
+  z-index: 200;
+
+}
+
 

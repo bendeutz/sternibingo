@@ -53,4 +53,8 @@ public class Board {
         }
         return result;
     }
+
+    public Field getField(int id) {
+        return fieldList.get(id);
+    }
 }

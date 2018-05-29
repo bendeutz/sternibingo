@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 @XmlRootElement(name = "BoardWrapper")
-public class XMLWrapper {
+public class XMLBoardWrapper {
 
     private List<Board> boardList;
 

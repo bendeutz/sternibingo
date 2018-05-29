@@ -5,11 +5,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "Field")
-// If you want you can define the order in which the fields are written
-// Optional
-@XmlType(propOrder = { "x", "y", "value"})
+@XmlType(propOrder = { "id", "x", "y", "value", "hit"})
 public class Field {
-    private int x,y,value, board;
+
+    private int x,y,value, id;
+    private boolean hit;
+
+    public void setHit(boolean hit) {
+        this.hit = hit;
+    }
 
     public void setX(int x) {
         this.x = x;
@@ -23,6 +27,10 @@ public class Field {
         this.value = value;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @XmlElement
     public int getX() {
         return x;
@@ -34,6 +42,14 @@ public class Field {
 
     public int getValue() {
         return value;
+    }
+
+    public boolean isHit() {
+        return hit;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override
