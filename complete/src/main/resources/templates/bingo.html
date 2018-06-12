@@ -34,12 +34,10 @@
 
 <script>
     $(document).ready(function () {
-        $('form').submit( function(event) {
+        $('#checknumber-form').submit( function(event) {
             var formId = this.id,
                 form = this;
-
             event.preventDefault();
-
             $('#check-number').modal('hide');
             $('.quader').toggleClass('quader-clicked');
             setTimeout( function () {
@@ -127,6 +125,9 @@
 <form th:action="@{deletenumberlist}" method="post" id="deletenumberlistform">
 </form>
 
+<form th:action="@{deletebingofieldlist}" method="post" id="deletebingofieldlist">
+</form>
+
 
 <div th:replace="fragments :: header('bingo')"></div>
 
@@ -145,15 +146,18 @@
                     data-toggle="modal">Nummer eingeben</button>
             <button class="btn btn-danger text-center"
                     type="submit" form="deletenumberlistform">Nummerliste löschen</button>
+            <button class="btn btn-danger text-center"
+                    type="submit" form="deletebingofieldlist">Bingofelder löschen</button>
         </div>
 
         <div class="quader"></div>
 
         <th:block th:each="board : ${boards}">
             <div class="table-wrapper">
-                <table class="margin-top" th:classappend="${boardStat.index % 2 == 0} ? 'left' : 'right'">
+                <table class="bingo-table"
+                       th:classappend="|${boardStat.index % 2 == 0 ? 'left' : 'right'} ${boardStat.index % 2 == 0 || boardStat.index != 1 ? 'margin-top' : ''}|">
                     <tr th:each="row : ${board.rows}">
-                        <td th:each="field : ${row}">
+                        <td th:each="field : ${row}" class="bingo-td">
                             <div class="content"  th:classappend="${field.isHit()} ? 'red' : 'transform'"
                                  th:id="${boardStat.index} + field + ${field.x} + ${field.y} + -out">
                                 <div class="v-align"

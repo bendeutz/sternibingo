@@ -126,7 +126,7 @@ public class BingoService {
         }
     }
 
-    private void deleteBoards() throws JAXBException {
+    public void deleteBoards() throws JAXBException {
         File xmlFile = new File(XML_PATH);
         xmlFile.delete();
     }

@@ -59,7 +59,6 @@ public class BingoController {
     }
 
 
-    //how to get a map to a json file
     @RequestMapping(value = "/getfieldswithnewnumber", produces = "application/json; charset=UTF-8")
     @ResponseBody
     public String getFieldsWithNewNumber(@RequestParam String number) throws JAXBException, JsonProcessingException {
@@ -67,4 +66,12 @@ public class BingoController {
         String json = objectMapper.writeValueAsString(bingoService.getFieldsWithNumber(number));
         return json;
     }
+
+    @RequestMapping(value = "/deletebingofieldlist")
+    public String deleteBingoFieldList() throws JAXBException {
+        bingoService.deleteBoards();
+        return "redirect:/bingo";
+    }
+
+
 }

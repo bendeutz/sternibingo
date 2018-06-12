@@ -26,6 +26,8 @@
                 <a th:href="@{/about}" th:text="about" id="about-button">About</a></li>
             <li th:class="${activeTab == 'bingo'}? 'active' : null">
                 <a th:href="@{/bingo}" th:text="bingo" id="bingo-button">About</a></li>
+            <li th:class="${activeTab == 'numbers'}? 'active' : null">
+                <a th:href="@{/numbers}" th:text="numbers" id="numbers-button">About</a></li>
         </ul>
     </div>
 </nav>
