@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<InputNumberWrapper>
+    <inputNumberList>
+        <value>15</value>
+        <counter>1</counter>
+    </inputNumberList>
+    <inputNumberList>
+        <value>25</value>
+        <counter>1</counter>
+    </inputNumberList>
+    <inputNumberList>
+        <value>26</value>
+        <counter>1</counter>
+    </inputNumberList>
+    <inputNumberList>
+        <value>19</value>
+        <counter>1</counter>
+    </inputNumberList>
+</InputNumberWrapper>

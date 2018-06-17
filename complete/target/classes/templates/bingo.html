@@ -12,37 +12,73 @@
     <link type="text/css" href="basic-style.css" rel="stylesheet">
 </head>
 <body>
-
-<script th:inline="javascript">
-    function animation() {
-        var number = $('#input-number').val();
-        $.ajax({
-            type: "GET",
-            dataType: "text",
-            url: "/getfieldswithnewnumber?number=" + number,
-            success: function(data) {
-                var json = jQuery.parseJSON(data);
-                $.each(json, function (index, field) {
-                    var fieldName = index + "field" + field.x + field.y + "-out";
-                    $('transform').toggleClass('blue');
-                });
-            },
-            async: false
-        });
-    }
-</script>
-
 <script>
     $(document).ready(function () {
+        var audio = new Audio("beersound.ogg");
         $('#checknumber-form').submit( function(event) {
+            //form
             var formId = this.id,
                 form = this;
             event.preventDefault();
+            var value = form[1].value;
+            var count = 0;
+            $('.v-align').each(function () {
+                if($(this).text() === value) {
+                    count++;
+                    // audio
+                    audio.play();
+                    //animation
+                    var domEle = $(this).parent().parent()[0];
+                    var xy = $(domEle).offset();
+
+                    // jQuery('<div>', {
+                    //     style : 'height: 0',
+                    //     id: 'sterni-div-' + count,
+                    //     class: 'sterni-img image-animation-start',
+                    // }).appendTo('#sterni-container');
+                    // jQuery('<img>', {
+                    //     id: 'sterni-' + count,
+                    //     src: 'sterni.png'
+                    // }).appendTo('#sterni-div-' + count);
+
+
+
+                    var transitionArray_1 = {
+                        "-webkit-transition": "5s",
+                        "transform": "rotate(2500deg)",
+                        "position": "absolute",
+                        "z-index": "1000",
+                        "height": "130px",
+                        "width": "130px",
+                        "top": xy.top-10,
+                        "left": xy.left-15
+                    }
+
+
+
+                    $('#sterni-' + count).css(transitionArray_1);
+                }
+            })
             $('#check-number').modal('hide');
-            $('.quader').toggleClass('quader-clicked');
+            var transitionArray_2 = {
+                "-webkit-transition": "2s",
+                "transform": "rotate(2000deg)",
+                "position": "absolute",
+                "z-index": "0",
+                "height": "15",
+                "width": "15",
+                "opacity" : "0.4"
+            }
             setTimeout( function () {
+                var count = 0;
+                $('.image-animation-start').each(function () {
+                    count++;
+                    $('#sterni-' + count).css(transitionArray_2)
+                });
+            }, 5000);
+            setTimeout(function () {
                 form.submit();
-            }, 4000);
+            }, 7000);
         });
     });
 </script>
@@ -104,7 +140,7 @@
 
 <div id="check-number" class="modal">
     <div class="modal-dialog modal-sm">
-        <form class="form-horizontal" onsubmit="animation()" method="post" th:action="@{checknumber}" id="checknumber-form">
+        <form class="form-horizontal" method="post" th:action="@{checknumber}" id="checknumber-form">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -150,7 +186,15 @@
                     type="submit" form="deletebingofieldlist">Bingofelder löschen</button>
         </div>
 
-        <div class="quader"></div>
+        <div th:each="board : ${boards}">
+            <div class="image-animation-start" style="height: 0">
+                <img th:id="sterni- + ${boardStat.count}" th:src="@{sterni.png}"/>
+            </div>
+        </div>
+
+        <!--<div class="image-animation-start" style="height:0">-->
+            <!--<img id="sterni-1" th:src="@{sterni.png}"/>-->
+        <!--</div>-->
 
         <th:block th:each="board : ${boards}">
             <div class="table-wrapper">

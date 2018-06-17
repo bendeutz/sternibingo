@@ -16,21 +16,19 @@
     <!--<link rel="stylesheet" href="webjars/bootstrap/3.3.6/css/bootstrap.min.css">-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- Custom styles for this template -->
-    <link type="text/css" href="/static/basic-style.css" rel="stylesheet">
+    <link type="text/css" href="basic-style.css" rel="stylesheet">
 
 </head>
 
 <body>
-<div th:replace="fragments :: header('home')">
+<div th:replace="fragments :: header('home')"> </div>
 <div class="container">
-
     <div class="start">
-        <h1>Bootstrap starter template</h1>
-        <p>Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        <div>
+            <img th:src="@{frontpage.jpg}"/>
+        </div>
     </div>
-
 </div>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
