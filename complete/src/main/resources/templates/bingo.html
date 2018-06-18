@@ -14,6 +14,7 @@
 <body>
 <script>
     $(document).ready(function () {
+        var ids = [];
         var audio = new Audio("beersound.ogg");
         $('#checknumber-form').submit( function(event) {
             //form
@@ -29,56 +30,45 @@
                     audio.play();
                     //animation
                     var domEle = $(this).parent().parent()[0];
+                    var fieldID = $(this).parent()[0].id;
+                    ids.push(fieldID);
                     var xy = $(domEle).offset();
-
-                    // jQuery('<div>', {
-                    //     style : 'height: 0',
-                    //     id: 'sterni-div-' + count,
-                    //     class: 'sterni-img image-animation-start',
-                    // }).appendTo('#sterni-container');
-                    // jQuery('<img>', {
-                    //     id: 'sterni-' + count,
-                    //     src: 'sterni.png'
-                    // }).appendTo('#sterni-div-' + count);
-
-
-
                     var transitionArray_1 = {
-                        "-webkit-transition": "5s",
+                        "-webkit-transition": "4s",
                         "transform": "rotate(2500deg)",
                         "position": "absolute",
                         "z-index": "1000",
-                        "height": "130px",
-                        "width": "130px",
+                        "height": domEle.clientHeight*1.3,
+                        "width": domEle.clientWidth*1.3,
                         "top": xy.top-10,
-                        "left": xy.left-15
+                        "left": xy.left-10
                     }
-
-
-
                     $('#sterni-' + count).css(transitionArray_1);
                 }
             })
             $('#check-number').modal('hide');
             var transitionArray_2 = {
+                "-webkit-transition": "1.5s",
+                "opacity" : "0"
+            }
+            var transitionArray_3 = {
                 "-webkit-transition": "2s",
-                "transform": "rotate(2000deg)",
-                "position": "absolute",
-                "z-index": "0",
-                "height": "15",
-                "width": "15",
-                "opacity" : "0.4"
+                "background" : "red",
+                "color" : "white"
             }
             setTimeout( function () {
+                $.each( ids, function( index, value ){
+                    $('#' + value).css(transitionArray_3);
+                });
                 var count = 0;
                 $('.image-animation-start').each(function () {
                     count++;
                     $('#sterni-' + count).css(transitionArray_2)
                 });
-            }, 5000);
+            }, 4000);
             setTimeout(function () {
                 form.submit();
-            }, 7000);
+            }, 5250);
         });
     });
 </script>
@@ -167,16 +157,12 @@
 
 <div th:replace="fragments :: header('bingo')"></div>
 
-
-
 <div class="container">
     <div class="start text-center">
-
         <div class="btn btn-group-vertical sticky-top">
             <button class="btn btn-success text-center"
                     data-target="#board-create"
                     data-toggle="modal">Bingofeld erstellen</button>
-
             <button class="btn btn-primary text-center"
                     data-target="#check-number"
                     data-toggle="modal">Nummer eingeben</button>
@@ -191,10 +177,6 @@
                 <img th:id="sterni- + ${boardStat.count}" th:src="@{sterni.png}"/>
             </div>
         </div>
-
-        <!--<div class="image-animation-start" style="height:0">-->
-            <!--<img id="sterni-1" th:src="@{sterni.png}"/>-->
-        <!--</div>-->
 
         <th:block th:each="board : ${boards}">
             <div class="table-wrapper">

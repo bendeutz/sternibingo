@@ -6,42 +6,42 @@
             <x>0</x>
             <y>0</y>
             <value>1</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>1</id>
             <x>0</x>
             <y>1</y>
             <value>2</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>2</id>
             <x>0</x>
             <y>2</y>
             <value>3</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>3</id>
             <x>0</x>
             <y>3</y>
             <value>4</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>4</id>
             <x>0</x>
             <y>4</y>
             <value>5</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>5</id>
             <x>1</x>
             <y>0</y>
             <value>6</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>6</id>
@@ -83,7 +83,7 @@
             <x>2</x>
             <y>1</y>
             <value>12</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>12</id>
@@ -104,7 +104,7 @@
             <x>2</x>
             <y>4</y>
             <value>15</value>
-            <hit>true</hit>
+            <hit>false</hit>
         </field>
         <field>
             <id>15</id>
@@ -167,14 +167,14 @@
             <x>4</x>
             <y>3</y>
             <value>24</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>24</id>
             <x>4</x>
             <y>4</y>
             <value>25</value>
-            <hit>true</hit>
+            <hit>false</hit>
         </field>
         <id>0</id>
     </boardList>
@@ -184,42 +184,42 @@
             <x>0</x>
             <y>0</y>
             <value>1</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>1</id>
             <x>0</x>
             <y>1</y>
             <value>2</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>2</id>
             <x>0</x>
             <y>2</y>
             <value>3</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>3</id>
             <x>0</x>
             <y>3</y>
             <value>4</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>4</id>
             <x>0</x>
             <y>4</y>
             <value>5</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>5</id>
             <x>1</x>
             <y>0</y>
             <value>6</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>6</id>
@@ -261,7 +261,7 @@
             <x>2</x>
             <y>1</y>
             <value>12</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>12</id>
@@ -282,7 +282,7 @@
             <x>2</x>
             <y>4</y>
             <value>15</value>
-            <hit>true</hit>
+            <hit>false</hit>
         </field>
         <field>
             <id>15</id>
@@ -345,14 +345,14 @@
             <x>4</x>
             <y>3</y>
             <value>24</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>24</id>
             <x>4</x>
             <y>4</y>
             <value>25</value>
-            <hit>true</hit>
+            <hit>false</hit>
         </field>
         <id>1</id>
     </boardList>
@@ -362,42 +362,42 @@
             <x>0</x>
             <y>0</y>
             <value>1</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>1</id>
             <x>0</x>
             <y>1</y>
             <value>2</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>2</id>
             <x>0</x>
             <y>2</y>
             <value>3</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>3</id>
             <x>0</x>
             <y>3</y>
             <value>4</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>4</id>
             <x>0</x>
             <y>4</y>
             <value>5</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>5</id>
             <x>1</x>
             <y>0</y>
             <value>6</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>6</id>
@@ -439,7 +439,7 @@
             <x>2</x>
             <y>1</y>
             <value>12</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>12</id>
@@ -460,7 +460,7 @@
             <x>2</x>
             <y>4</y>
             <value>15</value>
-            <hit>true</hit>
+            <hit>false</hit>
         </field>
         <field>
             <id>15</id>
@@ -523,14 +523,14 @@
             <x>4</x>
             <y>3</y>
             <value>24</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>24</id>
             <x>4</x>
             <y>4</y>
             <value>25</value>
-            <hit>true</hit>
+            <hit>false</hit>
         </field>
         <id>2</id>
     </boardList>
@@ -540,14 +540,14 @@
             <x>0</x>
             <y>0</y>
             <value>25</value>
-            <hit>true</hit>
+            <hit>false</hit>
         </field>
         <field>
             <id>1</id>
             <x>0</x>
             <y>1</y>
             <value>24</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>2</id>
@@ -610,7 +610,7 @@
             <x>2</x>
             <y>0</y>
             <value>15</value>
-            <hit>true</hit>
+            <hit>false</hit>
         </field>
         <field>
             <id>11</id>
@@ -631,7 +631,7 @@
             <x>2</x>
             <y>3</y>
             <value>12</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>14</id>
@@ -673,42 +673,42 @@
             <x>3</x>
             <y>4</y>
             <value>6</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>20</id>
             <x>4</x>
             <y>0</y>
             <value>5</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>21</id>
             <x>4</x>
             <y>1</y>
             <value>4</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>22</id>
             <x>4</x>
             <y>2</y>
             <value>3</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>23</id>
             <x>4</x>
             <y>3</y>
             <value>2</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>24</id>
             <x>4</x>
             <y>4</y>
             <value>1</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <id>3</id>
     </boardList>
@@ -718,42 +718,42 @@
             <x>0</x>
             <y>0</y>
             <value>1</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>1</id>
             <x>0</x>
             <y>1</y>
             <value>2</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>2</id>
             <x>0</x>
             <y>2</y>
             <value>3</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>3</id>
             <x>0</x>
             <y>3</y>
             <value>4</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>4</id>
             <x>0</x>
             <y>4</y>
             <value>5</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>5</id>
             <x>1</x>
             <y>0</y>
             <value>6</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>6</id>
@@ -795,7 +795,7 @@
             <x>2</x>
             <y>1</y>
             <value>12</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>12</id>
@@ -879,14 +879,14 @@
             <x>4</x>
             <y>3</y>
             <value>24</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>24</id>
             <x>4</x>
             <y>4</y>
             <value>26</value>
-            <hit>true</hit>
+            <hit>false</hit>
         </field>
         <id>4</id>
     </boardList>
