@@ -48,7 +48,7 @@
             <x>1</x>
             <y>1</y>
             <value>7</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>7</id>
@@ -226,7 +226,7 @@
             <x>1</x>
             <y>1</y>
             <value>7</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>7</id>
@@ -404,7 +404,7 @@
             <x>1</x>
             <y>1</y>
             <value>7</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>7</id>
@@ -666,7 +666,7 @@
             <x>3</x>
             <y>3</y>
             <value>7</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>19</id>
@@ -760,7 +760,7 @@
             <x>1</x>
             <y>1</y>
             <value>7</value>
-            <hit>false</hit>
+            <hit>true</hit>
         </field>
         <field>
             <id>7</id>

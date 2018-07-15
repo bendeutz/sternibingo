@@ -36,4 +36,8 @@
         <value>12</value>
         <counter>1</counter>
     </inputNumberList>
+    <inputNumberList>
+        <value>7</value>
+        <counter>1</counter>
+    </inputNumberList>
 </InputNumberWrapper>
